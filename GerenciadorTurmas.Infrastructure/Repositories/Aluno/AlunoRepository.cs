@@ -2,6 +2,7 @@
 using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
 using GerenciadorTurmas.Domain.Entities;
 using GerenciadorTurmas.Infrastructure.DbContext;
+using GerenciadorTurmas.Infrastructure.Extensions;
 
 namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 {
@@ -24,7 +25,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
             parameters.Add("Nome", aluno.Nome, System.Data.DbType.String);
             parameters.Add("Usuario", aluno.Usuario, System.Data.DbType.String);
-            parameters.Add("Senha", aluno.Senha, System.Data.DbType.String);
+            parameters.Add("Senha", aluno.Senha.HashPassword(), System.Data.DbType.String);
 
             using var connection = _dbContext.CreateConnection();
 
@@ -44,7 +45,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
             parameters.Add("Id", aluno.Id, System.Data.DbType.Int32);
             parameters.Add("Nome", aluno.Nome, System.Data.DbType.String);
             parameters.Add("Usuario", aluno.Usuario, System.Data.DbType.String);
-            parameters.Add("Senha", aluno.Senha, System.Data.DbType.String);
+            parameters.Add("Senha", aluno.Senha.HashPassword(), System.Data.DbType.String);
 
             using var connection = _dbContext.CreateConnection();
 
@@ -68,7 +69,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<IEnumerable<AlunoEntity>> Listar()
         {
-            var query = @"  Select Id, Nome, Usuario, Senha                  
+            var query = @"  Select Id, Nome, Usuario                 
                             From Aluno 
                             Where Id = Id ";
 
@@ -79,7 +80,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<AlunoEntity> ConsultarPorId(int id)
         {
-            var query = @"  Select Id, Nome, Usuario, Senha 
+            var query = @"  Select Id, Nome, Usuario
                             From Aluno 
                             Where Id = @Id ";
 

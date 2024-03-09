@@ -16,13 +16,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts SQL", "Scripts SQL", "{9BC1C409-4764-44F1-AB92-014916965B46}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts SQL", "Scripts SQL", "{80C341EE-802F-4284-8583-5FFBF14B8BCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Create", "Create", "{85CBA085-0E20-439D-87AF-BDAAE630EFAE}"
 	ProjectSection(SolutionItems) = preProject
-		01_Create_Database.sql = 01_Create_Database.sql
-		02_Create_Table_Aluno.sql = 02_Create_Table_Aluno.sql
-		03_Create_Table_Curso.sql = 03_Create_Table_Curso.sql
-		04_Create_Table_Turma.sql = 04_Create_Table_Turma.sql
-		05_Create_Table_Aluno_Turma.sql = 05_Create_Table_Aluno_Turma.sql
+		Scripts SQL\Create\01_Create_Database.sql = Scripts SQL\Create\01_Create_Database.sql
+		Scripts SQL\Create\02_Create_Table_Aluno.sql = Scripts SQL\Create\02_Create_Table_Aluno.sql
+		Scripts SQL\Create\03_Create_Table_Curso.sql = Scripts SQL\Create\03_Create_Table_Curso.sql
+		Scripts SQL\Create\04_Create_Table_Turma.sql = Scripts SQL\Create\04_Create_Table_Turma.sql
+		Scripts SQL\Create\05_Create_Table_Aluno_Turma.sql = Scripts SQL\Create\05_Create_Table_Aluno_Turma.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drop", "Drop", "{D298B44A-133A-468A-9C36-4D115B8CE085}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts SQL\Drop\01_Drop_Table_Aluno_Turma.sql = Scripts SQL\Drop\01_Drop_Table_Aluno_Turma.sql
+		Scripts SQL\Drop\02_Drop_Table_Turma.sql = Scripts SQL\Drop\02_Drop_Table_Turma.sql
+		Scripts SQL\Drop\03_Drop_Table_Curso.sql = Scripts SQL\Drop\03_Drop_Table_Curso.sql
+		Scripts SQL\Drop\04_Drop_Table_Aluno.sql = Scripts SQL\Drop\04_Drop_Table_Aluno.sql
+		Scripts SQL\Drop\Drop_Database.sql = Scripts SQL\Drop\Drop_Database.sql
 	EndProjectSection
 EndProject
 Global
@@ -50,6 +61,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85CBA085-0E20-439D-87AF-BDAAE630EFAE} = {80C341EE-802F-4284-8583-5FFBF14B8BCD}
+		{D298B44A-133A-468A-9C36-4D115B8CE085} = {80C341EE-802F-4284-8583-5FFBF14B8BCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F4EA573-1714-4886-98B9-2C641A877886}

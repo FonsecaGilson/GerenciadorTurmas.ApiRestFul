@@ -1,6 +1,4 @@
-﻿using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Aluno;
+﻿using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
 using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
 using GerenciadorTurmas.Domain.Entities;
 namespace GerenciadorTurmas.Application.UseCases
