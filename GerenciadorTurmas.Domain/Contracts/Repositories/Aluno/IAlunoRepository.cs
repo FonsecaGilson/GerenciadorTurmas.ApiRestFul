@@ -1,14 +1,17 @@
 ﻿using GerenciadorTurmas.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerenciadorTurmas.Domain.Contracts.Repositories.Aluno
 {
     public interface IAlunoRepository
     {
         Task<int> Inserir(AlunoEntity aluno);
+
+        Task Alterar(AlunoEntity aluno);
+
+        Task Inativar(int id);
+
+        Task<IEnumerable<AlunoEntity>> Listar();
+
+        Task<AlunoEntity> ConsultarPorId(int id);
     }
 }

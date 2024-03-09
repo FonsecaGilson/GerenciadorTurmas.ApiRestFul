@@ -2,11 +2,6 @@
 using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
 using GerenciadorTurmas.Domain.Entities;
 using GerenciadorTurmas.Infrastructure.DbContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 {
@@ -18,18 +13,83 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
         {
             _dbContext = dbContext;
         }
-
+                
         public async Task<int> Inserir(AlunoEntity aluno)
         {
-            var query = " Select 1";
+            var query = @"  Insert Into Aluno ( Nome, Usuario, Senha )
+                            Values ( @Nome, @Usuario, @Senha )
+                            Select Scope_Identity() ";
 
             var parameters = new DynamicParameters();
 
             parameters.Add("Nome", aluno.Nome, System.Data.DbType.String);
+            parameters.Add("Usuario", aluno.Usuario, System.Data.DbType.String);
+            parameters.Add("Senha", aluno.Senha, System.Data.DbType.String);
 
             using var connection = _dbContext.CreateConnection();
 
             return await connection.QueryFirstOrDefaultAsync<int>(query, parameters);
+        }
+
+        public async Task Alterar(AlunoEntity aluno)
+        {
+            var query = @"  Update Aluno 
+                            Set Nome = @Nome, 
+                                Usuario = @Usuario, 
+                                Senha = @Senha
+                            Where Id = @Id ";
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("Id", aluno.Id, System.Data.DbType.Int32);
+            parameters.Add("Nome", aluno.Nome, System.Data.DbType.String);
+            parameters.Add("Usuario", aluno.Usuario, System.Data.DbType.String);
+            parameters.Add("Senha", aluno.Senha, System.Data.DbType.String);
+
+            using var connection = _dbContext.CreateConnection();
+
+            await connection.ExecuteAsync(query, parameters);
+        }
+
+        public async Task Inativar(int id)
+        {
+            var query = @"  Update Aluno 
+                            Set Nome = Nome
+                            Where Id = @Id ";
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("Id", id, System.Data.DbType.Int32);
+
+            using var connection = _dbContext.CreateConnection();
+
+            await connection.ExecuteAsync(query, parameters);
+        }
+
+        public async Task<IEnumerable<AlunoEntity>> Listar()
+        {
+            var query = @"  Select Id, Nome, Usuario, Senha                  
+                            From Aluno 
+                            Where Id = Id ";
+
+            using var connection = _dbContext.CreateConnection();
+
+            return await connection.QueryAsync<AlunoEntity>(query);
+        }
+
+        public async Task<AlunoEntity> ConsultarPorId(int id)
+        {
+            var query = @"  Select Id, Nome, Usuario, Senha 
+                            From Aluno 
+                            Where Id = @Id ";
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("Id", id, System.Data.DbType.Int32);
+
+            using var connection = _dbContext.CreateConnection();
+
+            return await connection.QueryFirstAsync<AlunoEntity>(query, parameters);
         }
     }
 }

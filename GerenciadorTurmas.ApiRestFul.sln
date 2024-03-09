@@ -3,13 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Api", "GerenciadorTurmas.Api\GerenciadorTurmas.Api.csproj", "{C730694C-401E-4D3B-935A-6587F6C483DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorTurmas.Api", "GerenciadorTurmas.Api\GerenciadorTurmas.Api.csproj", "{C730694C-401E-4D3B-935A-6587F6C483DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Application", "GerenciadorTurmas.Application\GerenciadorTurmas.Application.csproj", "{7B521B0F-F537-4679-A64D-9A2617BC55E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorTurmas.Application", "GerenciadorTurmas.Application\GerenciadorTurmas.Application.csproj", "{7B521B0F-F537-4679-A64D-9A2617BC55E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Domain", "GerenciadorTurmas.Domain\GerenciadorTurmas.Domain.csproj", "{8C58CF9B-CA9E-4B07-BD94-3D44C58BC94D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorTurmas.Domain", "GerenciadorTurmas.Domain\GerenciadorTurmas.Domain.csproj", "{8C58CF9B-CA9E-4B07-BD94-3D44C58BC94D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Infrastructure", "GerenciadorTurmas.Infrastructure\GerenciadorTurmas.Infrastructure.csproj", "{035B95E5-ACA3-482A-B6B7-19F57EF9C431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorTurmas.Infrastructure", "GerenciadorTurmas.Infrastructure\GerenciadorTurmas.Infrastructure.csproj", "{035B95E5-ACA3-482A-B6B7-19F57EF9C431}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{469D5BA1-3F07-46DC-8779-DD592CC4FB93}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts SQL", "Scripts SQL", "{9BC1C409-4764-44F1-AB92-014916965B46}"
+	ProjectSection(SolutionItems) = preProject
+		01_Create_Database.sql = 01_Create_Database.sql
+		02_Create_Table_Aluno.sql = 02_Create_Table_Aluno.sql
+		03_Create_Table_Curso.sql = 03_Create_Table_Curso.sql
+		04_Create_Table_Turma.sql = 04_Create_Table_Turma.sql
+		05_Create_Table_Aluno_Turma.sql = 05_Create_Table_Aluno_Turma.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
