@@ -1,5 +1,6 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using GerenciadorTurmas.Api.Common.Middleware;
 using GerenciadorTurmas.Api.Models.Aluno;
 using GerenciadorTurmas.Api.Models.Inscricao;
 using GerenciadorTurmas.Api.Models.Turma;
@@ -68,6 +69,8 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwaggerUI();
 }
+
+app.UseErrorHandlingMiddleware();
 
 app.UseHttpsRedirection();
 
