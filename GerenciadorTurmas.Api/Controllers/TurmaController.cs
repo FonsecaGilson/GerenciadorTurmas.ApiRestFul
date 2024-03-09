@@ -19,33 +19,33 @@ namespace GerenciadorTurmas.Api.Controllers
             _turmaUseCase = turmaUseCase;
         }
 
-        [HttpPost]
+        [HttpPost("Inserir")]
         public async Task<IActionResult> Inserir(TurmaInput turma)
         {
             return Ok(await _turmaUseCase.Inserir(_mapper.Map<TurmaEntity>(turma)));
         }
 
-        [HttpPut]
+        [HttpPut("Alterar")]
         public async Task<IActionResult> Alterar(TurmaInput turma)
         {
             await _turmaUseCase.Alterar(_mapper.Map<TurmaEntity>(turma));
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Inativar/{id}")]
         public async Task<IActionResult> Inativar(int id)
         {
             await _turmaUseCase.Inativar(id);
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("Listar")]
         public async Task<IActionResult> Listar()
         {
             return Ok(await _turmaUseCase.Listar());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("ConsultarPorId/{id}")]
         public async Task<IActionResult> ConsultarPorId(int id)
         {
             return Ok(await _turmaUseCase.ConsultarPorId(id));

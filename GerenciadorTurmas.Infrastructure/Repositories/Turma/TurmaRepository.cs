@@ -52,7 +52,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Turma
         public async Task Inativar(int id)
         {
             var query = @"  Update Turma 
-                            Set Turma = Turma
+                            Set IsDeleted = 1
                             Where Id = @Id ";
 
             var parameters = new DynamicParameters();
@@ -68,7 +68,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Turma
         {
             var query = @"  Select Id, Turma, Ano
                             From Turma 
-                            Where Id = Id ";
+                            Where IsDeleted = 0 ";
 
             using var connection = _dbContext.CreateConnection();
 
@@ -79,7 +79,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Turma
         {
             var query = @"  Select Id, Turma, Ano
                             From Turma 
-                            Where Id = @Id ";
+                            Where IsDeleted = 0 And Id = @Id ";
 
             var parameters = new DynamicParameters();
 

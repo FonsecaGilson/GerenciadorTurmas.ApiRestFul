@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GerenciadorTurmas.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AlunoController : ControllerBase
     {
 
@@ -20,33 +20,33 @@ namespace GerenciadorTurmas.Api.Controllers
             _alunoUseCase = alunoUseCase;
         }
 
-        [HttpPost]
+        [HttpPost("Inserir")]
         public async Task<IActionResult> Inserir(AlunoInput aluno)
         {
             return Ok(await _alunoUseCase.Inserir(_mapper.Map<AlunoEntity>(aluno)));
         }
 
-        [HttpPut]
+        [HttpPut("Alterar")]
         public async Task<IActionResult> Alterar(AlunoInput aluno)
         {
             await _alunoUseCase.Alterar(_mapper.Map<AlunoEntity>(aluno));
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Inativar/{id}")]
         public async Task<IActionResult> Inativar(int id)
         {
             await _alunoUseCase.Inativar(id);
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("Listar")]
         public async Task<IActionResult> Listar()
         {
             return Ok(await _alunoUseCase.Listar());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("ConsultarPorId/{id}")]
         public async Task<IActionResult> ConsultarPorId(int id)
         {
             return Ok(await _alunoUseCase.ConsultarPorId(id));

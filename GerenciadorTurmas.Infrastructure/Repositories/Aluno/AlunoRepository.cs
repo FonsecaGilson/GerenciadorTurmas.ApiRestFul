@@ -55,7 +55,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
         public async Task Inativar(int id)
         {
             var query = @"  Update Aluno 
-                            Set Nome = Nome
+                            Set IsDeleted = 1
                             Where Id = @Id ";
 
             var parameters = new DynamicParameters();
@@ -69,9 +69,9 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<IEnumerable<AlunoEntity>> Listar()
         {
-            var query = @"  Select Id, Nome, Usuario                 
+            var query = @"  Select Id, Nome, Usuario, Senha                 
                             From Aluno 
-                            Where Id = Id ";
+                            Where IsDeleted = 0 ";
 
             using var connection = _dbContext.CreateConnection();
 
@@ -80,9 +80,9 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<AlunoEntity> ConsultarPorId(int id)
         {
-            var query = @"  Select Id, Nome, Usuario
+            var query = @"  Select Id, Nome, Usuario, Senha 
                             From Aluno 
-                            Where Id = @Id ";
+                            Where IsDeleted = 0 And Id = @Id ";
 
             var parameters = new DynamicParameters();
 

@@ -30,6 +30,16 @@ Else
 		Alter Table [dbo].[Turma] Alter Column [Ano] Int Null
 Go
 
+If Not Exists (Select * From sys.columns Where [name] = 'IsDeleted' And [object_Id] = Object_Id('[dbo].[Turma]'))
+	Alter Table [dbo].[Turma] Add [IsDeleted] Bit Not Null Default 0
+Else 
+	If Not Exists(Select * From sys.columns c Where c.[object_id] = Object_Id('[dbo].[Turma]') And c.[name] = 'IsDeleted' And Type_Name(c.system_type_id) = 'Bit' And c.max_length = 1)
+		Begin
+			Alter Table [dbo].[Turma] Alter Column [IsDeleted] Bit NOT NULL
+			Alter Table [dbo].[Turma] Add  Default (0) For [IsDeleted]
+		End
+Go
+
 If Not Exists(Select * From sys.key_constraints kc Where parent_object_id = Object_Id('[dbo].[Turma]') And kc.[type] = 'PK')
 	Alter Table [dbo].[Turma] Add Constraint [Turma_PK] Primary Key  ([Id])
 Go

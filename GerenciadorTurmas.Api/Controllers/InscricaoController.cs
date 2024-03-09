@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GerenciadorTurmas.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class InscricaoController : Controller
     {
         private readonly IMapper _mapper;
@@ -19,33 +19,33 @@ namespace GerenciadorTurmas.Api.Controllers
             _inscricaoUseCase = inscricaoUseCase;
         }
 
-        [HttpPost]
+        [HttpPost("Inserir")]
         public async Task<IActionResult> Inserir(InscricaoInput inscricao)
         {
             return Ok(await _inscricaoUseCase.Inserir(_mapper.Map<AlunoTurmaEntity>(inscricao)));
         }
 
-        [HttpPut]
+        [HttpPut("Alterar")]
         public async Task<IActionResult> Alterar(InscricaoInput inscricao)
         {
             await _inscricaoUseCase.Alterar(_mapper.Map<AlunoTurmaEntity>(inscricao));
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Inativar/{id}")]
         public async Task<IActionResult> Inativar(int id)
         {
             await _inscricaoUseCase.Inativar(id);
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("Listar")]
         public async Task<IActionResult> Listar()
         {
             return Ok(await _inscricaoUseCase.Listar());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("ConsultarPorId/{id}")]
         public async Task<IActionResult> ConsultarPorId(int id)
         {
             return Ok(await _inscricaoUseCase.ConsultarPorId(id));

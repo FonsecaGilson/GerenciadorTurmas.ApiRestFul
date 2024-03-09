@@ -30,6 +30,16 @@ Else
 		Alter Table [dbo].[Aluno] Alter Column [Senha] Char(60) Null
 Go
 
+If Not Exists (Select * From sys.columns Where [name] = 'IsDeleted' And [object_Id] = Object_Id('[dbo].[Aluno]'))
+	Alter Table [dbo].[Aluno] Add [IsDeleted] Bit Not Null Default 0
+Else 
+	If Not Exists(Select * From sys.columns c Where c.[object_id] = Object_Id('[dbo].[Aluno]') And c.[name] = 'IsDeleted' And Type_Name(c.system_type_id) = 'Bit' And c.max_length = 1)
+		Begin
+			Alter Table [dbo].[Aluno] Alter Column [IsDeleted] Bit NOT NULL
+			Alter Table [dbo].[Aluno] Add  Default (0) For [IsDeleted]
+		End
+Go
+
 If Not Exists(Select * From sys.key_constraints kc Where parent_object_id = Object_Id('[dbo].[Aluno]') And kc.[type] = 'PK')
 	Alter Table [dbo].[Aluno] Add Constraint [Aluno_PK] Primary Key  ([Id])
 Go

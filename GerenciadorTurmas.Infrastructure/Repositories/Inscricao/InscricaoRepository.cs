@@ -51,7 +51,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
         public async Task Inativar(int id)
         {
             var query = @"  Update Aluno_Turma 
-                            Set Nome = Nome
+                            Set IsDeleted = 1
                             Where Id = @Id ";
 
             var parameters = new DynamicParameters();
@@ -67,7 +67,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
         {
             var query = @"  Select Id, Aluno_Id As AlunoId, Turma_Id As TurmaId                
                             From Aluno_Turma 
-                            Where Id = Id ";
+                            Where IsDeleted = 0 ";
 
             using var connection = _dbContext.CreateConnection();
 
@@ -78,7 +78,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
         {
             var query = @"  Select Id, Aluno_Id As AlunoId, Turma_Id As TurmaId 
                             From Aluno_Turma 
-                            Where Id = @Id ";
+                            Where IsDeleted = 0 And Id = @Id ";
 
             var parameters = new DynamicParameters();
 
