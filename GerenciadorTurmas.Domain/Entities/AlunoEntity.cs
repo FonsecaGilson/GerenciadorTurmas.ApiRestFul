@@ -7,7 +7,7 @@
             Id = id;
             Nome = nome;
             Usuario = usuario;
-            Senha = senha;  
+            Senha = senha;
         }
 
         public int? Id { get; private set; }

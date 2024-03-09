@@ -1,21 +1,21 @@
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using GerenciadorTurmas.Api.Models.Aluno;
+using GerenciadorTurmas.Api.Models.Inscricao;
+using GerenciadorTurmas.Api.Models.Turma;
+using GerenciadorTurmas.Api.Swagger;
 using GerenciadorTurmas.Application.UseCases;
 using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
+using GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao;
+using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
 using GerenciadorTurmas.Domain.Contracts.UseCases.Aluno;
+using GerenciadorTurmas.Domain.Contracts.UseCases.Inscriao;
+using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
 using GerenciadorTurmas.Infrastructure.DbContext;
 using GerenciadorTurmas.Infrastructure.Repositories.Aluno;
-using FluentValidation.AspNetCore;
-using Microsoft.OpenApi.Models;
-using GerenciadorTurmas.Api.Swagger;
-using GerenciadorTurmas.Infrastructure.Repositories.Turma;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
-using GerenciadorTurmas.Api.Models.Turma;
-using GerenciadorTurmas.Api.Models.Inscricao;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao;
 using GerenciadorTurmas.Infrastructure.Repositories.Inscricao;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Inscriao;
+using GerenciadorTurmas.Infrastructure.Repositories.Turma;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

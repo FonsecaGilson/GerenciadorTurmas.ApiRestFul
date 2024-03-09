@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GerenciadorTurmas.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]   
+    [Route("api/[controller]")]
     public class TurmaController : ControllerBase
     {
         private readonly IMapper _mapper;

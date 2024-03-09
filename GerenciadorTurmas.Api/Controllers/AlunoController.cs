@@ -17,13 +17,13 @@ namespace GerenciadorTurmas.Api.Controllers
         public AlunoController(IMapper mapper, IAlunoUseCase alunoUseCase)
         {
             _mapper = mapper;
-            _alunoUseCase = alunoUseCase;         
+            _alunoUseCase = alunoUseCase;
         }
 
         [HttpPost]
         public async Task<IActionResult> Inserir(AlunoInput aluno)
         {
-            return Ok( await _alunoUseCase.Inserir(_mapper.Map<AlunoEntity>(aluno)));
+            return Ok(await _alunoUseCase.Inserir(_mapper.Map<AlunoEntity>(aluno)));
         }
 
         [HttpPut]
@@ -42,7 +42,7 @@ namespace GerenciadorTurmas.Api.Controllers
 
         [HttpGet]
         public async Task<IActionResult> Listar()
-        {           
+        {
             return Ok(await _alunoUseCase.Listar());
         }
 

@@ -6,7 +6,7 @@ using GerenciadorTurmas.Infrastructure.Extensions;
 
 namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 {
-    public class AlunoRepository: IAlunoRepository
+    public class AlunoRepository : IAlunoRepository
     {
         private readonly IDbContext _dbContext;
 
@@ -14,7 +14,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
         {
             _dbContext = dbContext;
         }
-                
+
         public async Task<int> Inserir(AlunoEntity aluno)
         {
             var query = @"  Insert Into Aluno ( Nome, Usuario, Senha )
