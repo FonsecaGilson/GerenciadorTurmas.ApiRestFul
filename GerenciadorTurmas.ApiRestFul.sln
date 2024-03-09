@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Api", "GerenciadorTurmas.Api\GerenciadorTurmas.Api.csproj", "{C730694C-401E-4D3B-935A-6587F6C483DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Application", "GerenciadorTurmas.Application\GerenciadorTurmas.Application.csproj", "{7B521B0F-F537-4679-A64D-9A2617BC55E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C730694C-401E-4D3B-935A-6587F6C483DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C730694C-401E-4D3B-935A-6587F6C483DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C730694C-401E-4D3B-935A-6587F6C483DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B521B0F-F537-4679-A64D-9A2617BC55E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B521B0F-F537-4679-A64D-9A2617BC55E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B521B0F-F537-4679-A64D-9A2617BC55E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B521B0F-F537-4679-A64D-9A2617BC55E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
