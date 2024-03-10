@@ -2,6 +2,7 @@
 using GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao;
 using GerenciadorTurmas.Domain.Entities;
 using GerenciadorTurmas.Infrastructure.DbContext;
+using System.Threading.Tasks;
 
 namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
 {
@@ -87,6 +88,32 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
             using var connection = _dbContext.CreateConnection();
 
             return await connection.QueryFirstAsync<AlunoTurmaEntity>(query, parameters);
+        }
+
+        public async Task<bool> VerificarExistenciaInscricao(int alunoId, int turmaId, int? id)
+        {
+            var query = @" Select Case
+                                        When Exists
+                                            (
+                                                Select Top 1 1
+                                                From   Aluno_Turma
+                                                Where  Aluno_Id = @alunoId And Turma_Id = @turmaId
+                                                        And IsDeleted = 0
+                                                        And ((Id <> @id And @id Is Not Null) Or @id Is Null)
+                                            )
+                                          Then Cast(1 As Bit)
+                                      Else Cast(0 As Bit)
+                                  End ";
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("alunoId", alunoId, System.Data.DbType.Int64);
+            parameters.Add("turmaId", turmaId, System.Data.DbType.Int64);
+            parameters.Add("id", id, System.Data.DbType.Int64);
+
+            using var connection = _dbContext.CreateConnection();
+
+            return await connection.QueryFirstAsync<bool>(query, parameters);
         }
     }
 }

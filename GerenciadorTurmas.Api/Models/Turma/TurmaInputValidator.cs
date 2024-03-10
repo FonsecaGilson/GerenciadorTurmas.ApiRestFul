@@ -11,7 +11,7 @@ namespace GerenciadorTurmas.Api.Models.Turma
                 .MinimumLength(3).WithMessage("Nome deve conter no minimo 3 caracteres.");
 
             RuleFor(c => c.Ano).NotEmpty().WithMessage("Ano é obrigatório.")
-                .ExclusiveBetween(2000, 2100).WithMessage("Ano de ser entre 2000 e 2100.");
+                .GreaterThanOrEqualTo(DateTime.Now.Year).WithMessage($"Ano de ser igual ou superior a {DateTime.Now.Year}.");
 
         }
     }

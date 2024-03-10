@@ -13,5 +13,7 @@ namespace GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao
         Task<IEnumerable<AlunoTurmaEntity>> Listar();
 
         Task<AlunoTurmaEntity> ConsultarPorId(int id);
+
+        Task<bool> VerificarExistenciaInscricao(int alunoId, int turmaId, int? id);
     }
 }

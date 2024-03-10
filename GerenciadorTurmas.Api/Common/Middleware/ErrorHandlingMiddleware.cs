@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using GerenciadorTurmas.Application.CustonException;
 using Newtonsoft.Json;
 
 namespace GerenciadorTurmas.Api.Common.Middleware
@@ -28,13 +29,26 @@ namespace GerenciadorTurmas.Api.Common.Middleware
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            var response = new { message = "Ocorreu um erro durante o processamento da solicitação. Caso o erro persista, entre em contato com o suporte." };
-            var jsonResponse = JsonConvert.SerializeObject(response);
+            if (exception is RegraNegocioException regraNegocioException)
+            {
+                var response = new { message = regraNegocioException.Message };
+                var jsonResponse = JsonConvert.SerializeObject(response);
 
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
 
-            return context.Response.WriteAsync(jsonResponse);
+                return context.Response.WriteAsync(jsonResponse);
+            }
+            else
+            {
+                var response = new { message = "Ocorreu um erro durante o processamento da solicitação. Caso o erro persista, entre em contato com o suporte." };
+                var jsonResponse = JsonConvert.SerializeObject(response);
+
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                return context.Response.WriteAsync(jsonResponse);
+            }
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
+﻿using GerenciadorTurmas.Application.CustonException;
+using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
 using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
 using GerenciadorTurmas.Domain.Entities;
 namespace GerenciadorTurmas.Application.UseCases
@@ -14,11 +15,15 @@ namespace GerenciadorTurmas.Application.UseCases
 
         public async Task Alterar(TurmaEntity turma)
         {
+            await VerificarExistenciaTurma(turma.Turma, turma.Id);
+
             await _turmaRepository.Alterar(turma);
         }
 
         public async Task<int> Inserir(TurmaEntity turma)
         {
+            await VerificarExistenciaTurma(turma.Turma);
+
             return await _turmaRepository.Inserir(turma);
         }
 
@@ -34,6 +39,16 @@ namespace GerenciadorTurmas.Application.UseCases
         public async Task<TurmaEntity> ConsultarPorId(int id)
         {
             return await _turmaRepository.ConsultarPorId(id);
+        }
+
+        public async Task VerificarExistenciaTurma(string turma, int? id = null)
+        {
+            var turmaExistente =  await _turmaRepository.VerificarExistenciaTurma(turma, id);
+
+            if (turmaExistente)
+            {
+                throw new RegraNegocioException($"Já existe uma turma cadastrada com o nome {turma}.");
+            }
         }
     }
 }

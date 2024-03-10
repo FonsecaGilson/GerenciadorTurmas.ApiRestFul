@@ -13,5 +13,7 @@ namespace GerenciadorTurmas.Domain.Contracts.Repositories.Turma
         Task<IEnumerable<TurmaEntity>> Listar();
 
         Task<TurmaEntity> ConsultarPorId(int id);
+
+        Task<bool> VerificarExistenciaTurma(string turma, int? id);
     }
 }

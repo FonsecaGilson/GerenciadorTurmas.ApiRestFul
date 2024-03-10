@@ -89,5 +89,30 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Turma
 
             return await connection.QueryFirstAsync<TurmaEntity>(query, parameters);
         }
+
+        public async Task<bool> VerificarExistenciaTurma(string turma, int? id)
+        {
+            var query = @" Select Case
+                                        When Exists
+                                            (
+                                                Select Top 1 1
+                                                From   Turma
+                                                Where  Turma = @turma
+                                                        And IsDeleted = 0
+                                                        And ((Id <> @Id And @Id Is Not Null) Or @Id Is Null)
+                                            )
+                                          Then Cast(1 As Bit)
+                                      Else Cast(0 As Bit)
+                                  End ";
+
+            var parameters = new DynamicParameters();
+
+            parameters.Add("turma", turma, System.Data.DbType.String);
+            parameters.Add("id", id, System.Data.DbType.Int64);
+
+            using var connection = _dbContext.CreateConnection();
+
+            return await connection.QueryFirstAsync<bool>(query, parameters);
+        }
     }
 }

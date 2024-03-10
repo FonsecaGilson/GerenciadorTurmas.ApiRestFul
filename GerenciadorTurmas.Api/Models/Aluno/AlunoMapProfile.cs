@@ -7,7 +7,15 @@ namespace GerenciadorTurmas.Api.Models.Aluno
     {
         public AlunoMapProfile()
         {
-            CreateMap<AlunoInput, AlunoEntity>().ReverseMap();
+            CreateMap<AlunoInput, AlunoEntity>()
+                .ForMember(d => d.Id, s => s.MapFrom(x => x.Id))
+                .ForMember(d => d.Nome, s => s.MapFrom(x => x.Nome))
+                .ForMember(d => d.Usuario, s => s.MapFrom(x => x.Usuario))
+                .ReverseMap()
+                .ForMember(d => d.Id, s => s.MapFrom(x => x.Id))
+                .ForMember(d => d.Nome, s => s.MapFrom(x => x.Nome))
+                .ForMember(d => d.Usuario, s => s.MapFrom(x => x.Usuario))
+                .ForMember(d => d.Senha, s => s.MapFrom(x => x.Senha));
         }
     }
 }
