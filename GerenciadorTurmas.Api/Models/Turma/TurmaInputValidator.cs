@@ -11,7 +11,7 @@ namespace GerenciadorTurmas.Api.Models.Turma
                 .MinimumLength(3).WithMessage("Turma deve conter no minimo 3 caracteres.");
 
             RuleFor(c => c.Ano).NotEmpty().WithMessage("Ano é obrigatório.")
-                .GreaterThanOrEqualTo(DateTime.Now.Year).WithMessage($"Ano de ser igual ou superior a {DateTime.Now.Year}.");
+                .GreaterThanOrEqualTo(DateTime.Now.Year).WithMessage($"Ano de ser igual ou superior a ano atual.");
 
         }
     }
