@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GerenciadorTurmas.Api.Common.Validator;
 using GerenciadorTurmas.Api.Models.Turma;
 using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
 using GerenciadorTurmas.Domain.Entities;
@@ -12,11 +13,13 @@ namespace GerenciadorTurmas.Api.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ITurmaUseCase _turmaUseCase;
+        private readonly IdPayloadValidator _idPayloadValidator;
 
-        public TurmaController(IMapper mapper, ITurmaUseCase turmaUseCase)
+        public TurmaController(IMapper mapper, ITurmaUseCase turmaUseCase, IdPayloadValidator idPayloadValidator)
         {
             _mapper = mapper;
             _turmaUseCase = turmaUseCase;
+            _idPayloadValidator = idPayloadValidator;
         }
 
         [HttpPost("Inserir")]
@@ -35,7 +38,15 @@ namespace GerenciadorTurmas.Api.Controllers
         [HttpDelete("Inativar/{id}")]
         public async Task<IActionResult> Inativar(int id)
         {
+            var validationResult = _idPayloadValidator.Validate(id);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             await _turmaUseCase.Inativar(id);
+
             return Ok();
         }
 
@@ -48,6 +59,13 @@ namespace GerenciadorTurmas.Api.Controllers
         [HttpGet("ConsultarPorId/{id}")]
         public async Task<IActionResult> ConsultarPorId(int id)
         {
+            var validationResult = _idPayloadValidator.Validate(id);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             return Ok(await _turmaUseCase.ConsultarPorId(id));
         }
     }

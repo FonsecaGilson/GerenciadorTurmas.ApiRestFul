@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GerenciadorTurmas.Api.Common.Validator;
 using GerenciadorTurmas.Api.Models.Aluno;
 using GerenciadorTurmas.Domain.Contracts.UseCases.Aluno;
 using GerenciadorTurmas.Domain.Entities;
@@ -13,11 +14,13 @@ namespace GerenciadorTurmas.Api.Controllers
 
         private readonly IMapper _mapper;
         private readonly IAlunoUseCase _alunoUseCase;
+        private readonly IdPayloadValidator _idPayloadValidator;
 
-        public AlunoController(IMapper mapper, IAlunoUseCase alunoUseCase)
+        public AlunoController(IMapper mapper, IAlunoUseCase alunoUseCase, IdPayloadValidator idPayloadValidator)
         {
             _mapper = mapper;
             _alunoUseCase = alunoUseCase;
+            _idPayloadValidator = idPayloadValidator;  
         }
 
         [HttpPost("Inserir")]
@@ -36,6 +39,13 @@ namespace GerenciadorTurmas.Api.Controllers
         [HttpDelete("Inativar/{id}")]
         public async Task<IActionResult> Inativar(int id)
         {
+            var validationResult = _idPayloadValidator.Validate(id);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             await _alunoUseCase.Inativar(id);
             return Ok();
         }
@@ -49,6 +59,13 @@ namespace GerenciadorTurmas.Api.Controllers
         [HttpGet("ConsultarPorId/{id}")]
         public async Task<IActionResult> ConsultarPorId(int id)
         {
+            var validationResult = _idPayloadValidator.Validate(id);
+
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
             return Ok(await _alunoUseCase.ConsultarPorId(id));
         }
     }

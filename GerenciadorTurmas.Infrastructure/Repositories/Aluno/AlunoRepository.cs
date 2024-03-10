@@ -69,7 +69,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<IEnumerable<AlunoEntity>> Listar()
         {
-            var query = @"  Select Id, Nome, Usuario, Senha                 
+            var query = @"  Select Id, Nome, Usuario, '' As Senha                 
                             From Aluno 
                             Where IsDeleted = 0 ";
 
@@ -80,7 +80,7 @@ namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
 
         public async Task<AlunoEntity> ConsultarPorId(int id)
         {
-            var query = @"  Select Id, Nome, Usuario, Senha 
+            var query = @"  Select Id, Nome, Usuario, '' As Senha  
                             From Aluno 
                             Where IsDeleted = 0 And Id = @Id ";
 
