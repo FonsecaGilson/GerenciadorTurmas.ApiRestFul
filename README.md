@@ -18,7 +18,7 @@
   . Na pasta `GerenciadorTurmas.ApiRestFul/Scripts SQL/Create`, existem os scripts SQL para a criação do banco de dados e das tabelas necessárias. Preferencialmente, execute-os na ordem alfabética dos nomes dos arquivos para evitar erros.
 
 ## Execução do teste de integração
-  . Na pasta `GerenciadorTurmas.ApiRestFul/Scripts SQL/IntegrationTest`, existe um scripts SQL para preparação do banco para a execução do testes de integração, o script recria/cria as tabela e as valoriza com o dados utilizado nas difinições do teste
+  . Na pasta `GerenciadorTurmas.ApiRestFul/Scripts SQL/IntegrationTest`, existe um scripts SQL que preparação do banco para a execução do testes de integração, o script recria/cria as tabela e as valoriza com o dados utilizado nas difinições do teste
 
 ## Remoção da base de dados
   . Na pasta `GerenciadorTurmas.ApiRestFul/Scripts SQL/Drop`, existem os scripts SQL para a remoção do banco de dados e das tabelas necessárias. Preferencialmente, execute-os na ordem alfabética dos nomes dos arquivos para evitar erros.
