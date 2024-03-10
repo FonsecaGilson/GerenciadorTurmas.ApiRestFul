@@ -6,13 +6,11 @@ namespace GerenciadorTurmas.UnitTest
     public class AlunoInputValidatorTests
     {
         [Trait("Category", "Unit")]
-        [Fact(DisplayName = "Testando AlunoInputValidator com todos os atributos de AlunoInput valorizado corretamente.")]
+        [Fact(DisplayName = "Testando AlunoInputValidator com todos os atributos de AlunoInput valorizados corretamente.")]
         public void AlunoInputValidator_ShouldPassValidation()
         {
             var validator = new AlunoInputValidator();
-
             var aluno = new AlunoInput { Nome = "Maria Helena", Usuario = "Marihel", Senha = "Marihel123?" };
-
             var resultoValidacao = validator.TestValidate(aluno);
 
             resultoValidacao.ShouldNotHaveValidationErrorFor(p => p.Nome);
@@ -21,22 +19,7 @@ namespace GerenciadorTurmas.UnitTest
         }
 
         [Trait("Category", "Unit")]
-        [Fact(DisplayName = "Testando AlunoInputValidator com todos os atributos de AlunoInput valorizado incorretamente.")]
-        public void AlunoInputValidator_ShouldFailValidation()
-        {
-            var validator = new AlunoInputValidator();
-
-            var aluno = new AlunoInput { Nome = "", Usuario = "M", Senha = "Marihel123" };
-
-            var resultoValidacao = validator.TestValidate(aluno);
-
-            resultoValidacao.ShouldHaveValidationErrorFor(p => p.Nome);
-            resultoValidacao.ShouldHaveValidationErrorFor(p => p.Usuario);
-            resultoValidacao.ShouldHaveValidationErrorFor(p => p.Senha);
-        }
-
-        [Trait("Category", "Unit")]
-        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributos Nome de AlunoInput valorizado icorretamente.")]
+        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributo Nome de AlunoInput valorizado icorretamente.")]
         [InlineData("Nome vazio", "", 1)]
         [InlineData("Nome com espaços em branco", "   ", 1)]
         [InlineData("Nome com menos de 3 caracteres", "Ma", 1)]
@@ -54,7 +37,7 @@ namespace GerenciadorTurmas.UnitTest
         }
 
         [Trait("Category", "Unit")]
-        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributos Usuário de AlunoInput valorizado icorretamente.")]
+        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributo Usuário de AlunoInput valorizado icorretamente.")]
         [InlineData("Usuario vazio", "", 1)]
         [InlineData("Usuario com espaços em branco", "   ", 1)]
         [InlineData("Usuario com menos de 3 caracteres", "Ma", 1)]
@@ -72,12 +55,12 @@ namespace GerenciadorTurmas.UnitTest
         }
 
         [Trait("Category", "Unit")]
-        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributos Senha de AlunoInput valorizado icorretamente.")]
+        [Theory(DisplayName = "Testando AlunoInputValidator mensagem de retorno com o atributo Senha de AlunoInput valorizado icorretamente.")]
         [InlineData("Senha vazia", "", 1)]
         [InlineData("Senha com espaços em branco", "   ", 1)]
         [InlineData("Senha com menos de 8 caracteres", "Maria12", 1)]
         [InlineData("Senha com mais de 16 caracteres", "Maria", 4)]
-        [InlineData("Senha sem os caracteres especiais (!? *.)", "Maria123", 1)]
+        [InlineData("Senha sem nehum dos caracteres especiais (!? *.)", "Maria123", 1)]
         [InlineData("Senha sem uma letras maiúsculas", "maria123?", 1)]
         [InlineData("Senha sem uma letras minúsculas", "MARIA123?", 1)]
         [InlineData("Senha sem um numero", "Mariaaaa?", 1)]
