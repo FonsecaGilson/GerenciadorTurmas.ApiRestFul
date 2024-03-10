@@ -1,6 +1,6 @@
-﻿using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Domain.Contracts.Repositories.Aluno
+namespace BancoDadosTest.Domain.Contracts.Repositories.Aluno
 {
     public interface IAlunoRepository
     {

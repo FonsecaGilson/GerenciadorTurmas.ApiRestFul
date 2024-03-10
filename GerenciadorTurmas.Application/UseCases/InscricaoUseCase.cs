@@ -1,9 +1,9 @@
-﻿using GerenciadorTurmas.Application.CustonException;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Inscriao;
-using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Application.CustonException;
+using BancoDadosTest.Domain.Contracts.Repositories.Inscricao;
+using BancoDadosTest.Domain.Contracts.UseCases.Inscriao;
+using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Application.UseCases
+namespace BancoDadosTest.Application.UseCases
 {
     public class InscricaoUseCase : IInscricaoUseCase
     {

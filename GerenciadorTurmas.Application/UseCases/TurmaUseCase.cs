@@ -1,8 +1,8 @@
-﻿using GerenciadorTurmas.Application.CustonException;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Turma;
-using GerenciadorTurmas.Domain.Entities;
-namespace GerenciadorTurmas.Application.UseCases
+﻿using BancoDadosTest.Application.CustonException;
+using BancoDadosTest.Domain.Contracts.Repositories.Turma;
+using BancoDadosTest.Domain.Contracts.UseCases.Turma;
+using BancoDadosTest.Domain.Entities;
+namespace BancoDadosTest.Application.UseCases
 {
     public class TurmaUseCase : ITurmaUseCase
     {

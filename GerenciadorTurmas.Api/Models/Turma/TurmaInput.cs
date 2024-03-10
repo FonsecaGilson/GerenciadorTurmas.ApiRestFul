@@ -1,4 +1,4 @@
-﻿namespace GerenciadorTurmas.Api.Models.Turma
+﻿namespace BancoDadosTest.Api.Models.Turma
 {
     public class TurmaInput
     {

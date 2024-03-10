@@ -1,6 +1,6 @@
-﻿using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao
+namespace BancoDadosTest.Domain.Contracts.Repositories.Inscricao
 {
     public interface IInscricaoRepository
     {

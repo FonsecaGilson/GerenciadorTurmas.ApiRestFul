@@ -1,8 +1,8 @@
-﻿using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Aluno;
-using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Contracts.Repositories.Aluno;
+using BancoDadosTest.Domain.Contracts.UseCases.Aluno;
+using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Application.UseCases
+namespace BancoDadosTest.Application.UseCases
 {
     public class AlunoUseCase : IAlunoUseCase
     {

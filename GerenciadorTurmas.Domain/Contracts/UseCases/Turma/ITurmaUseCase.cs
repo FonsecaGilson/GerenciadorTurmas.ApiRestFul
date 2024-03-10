@@ -1,6 +1,6 @@
-﻿using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Domain.Contracts.UseCases.Turma
+namespace BancoDadosTest.Domain.Contracts.UseCases.Turma
 {
     public interface ITurmaUseCase
     {

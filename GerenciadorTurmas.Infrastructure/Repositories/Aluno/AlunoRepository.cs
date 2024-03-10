@@ -1,10 +1,10 @@
 ﻿using Dapper;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Aluno;
-using GerenciadorTurmas.Domain.Entities;
-using GerenciadorTurmas.Infrastructure.DbContext;
-using GerenciadorTurmas.Infrastructure.Extensions;
+using BancoDadosTest.Domain.Contracts.Repositories.Aluno;
+using BancoDadosTest.Domain.Entities;
+using BancoDadosTest.Infrastructure.DbContext;
+using BancoDadosTest.Infrastructure.Extensions;
 
-namespace GerenciadorTurmas.Infrastructure.Repositories.Aluno
+namespace BancoDadosTest.Infrastructure.Repositories.Aluno
 {
     public class AlunoRepository : IAlunoRepository
     {

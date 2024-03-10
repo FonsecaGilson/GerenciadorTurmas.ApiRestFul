@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace GerenciadorTurmas.Infrastructure.DbContext
+namespace BancoDadosTest.Infrastructure.DbContext
 {
     public class DbContext : IDbContext
     {

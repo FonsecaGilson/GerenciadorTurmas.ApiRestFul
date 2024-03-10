@@ -1,9 +1,9 @@
-﻿using GerenciadorTurmas.Api.Models.Turma;
+﻿using BancoDadosTest.Api.Models.Turma;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace GerenciadorTurmas.Api.Swagger
+namespace BancoDadosTest.Api.Swagger
 {
     public class TurmaInputSchemaFilter : ISchemaFilter
     {

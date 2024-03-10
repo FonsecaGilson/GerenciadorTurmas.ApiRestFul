@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using GerenciadorTurmas.Api.Common.Validator;
-using GerenciadorTurmas.Api.Models.Aluno;
-using GerenciadorTurmas.Domain.Contracts.UseCases.Aluno;
-using GerenciadorTurmas.Domain.Entities;
+using BancoDadosTest.Api.Common.Validator;
+using BancoDadosTest.Api.Models.Aluno;
+using BancoDadosTest.Domain.Contracts.UseCases.Aluno;
+using BancoDadosTest.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GerenciadorTurmas.Api.Controllers
+namespace BancoDadosTest.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
-using GerenciadorTurmas.Application.CustonException;
+using BancoDadosTest.Application.CustonException;
 using Newtonsoft.Json;
 
-namespace GerenciadorTurmas.Api.Common.Middleware
+namespace BancoDadosTest.Api.Common.Middleware
 {
     public class ErrorHandlingMiddleware
     {

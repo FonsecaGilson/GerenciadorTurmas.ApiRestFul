@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using GerenciadorTurmas.Domain.Entities;
+using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Api.Models.Aluno
+namespace BancoDadosTest.Api.Models.Aluno
 {
     public class AlunoMapProfile : Profile
     {

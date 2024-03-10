@@ -1,9 +1,9 @@
-﻿using GerenciadorTurmas.Api.Models.Inscricao;
+﻿using BancoDadosTest.Api.Models.Inscricao;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace GerenciadorTurmas.Api.Swagger
+namespace BancoDadosTest.Api.Swagger
 {
     public class InscricaoInputSchemaFilter : ISchemaFilter
     {

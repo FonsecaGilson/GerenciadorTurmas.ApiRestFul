@@ -1,12 +1,12 @@
-﻿using GerenciadorTurmas.Api.Models.Aluno;
-using GerenciadorTurmas.Api.Models.Turma;
+﻿using BancoDadosTest.Api.Models.Turma;
+using BancoDadosTest.IntegrationTest;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace GerenciadorTurmas.IntegrationTest
+namespace TurmaApiTests.IntegrationTest
 {
     public class TurmaApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
@@ -85,8 +85,8 @@ namespace GerenciadorTurmas.IntegrationTest
             var turma = new TurmaInput()
             {
                 Id = null,
-                Turma = "Matemática",
-                Ano = 2024,
+                Turma = "História",
+                Ano = 2025,
             };
 
             string jsonContent = JsonSerializer.Serialize(turma);

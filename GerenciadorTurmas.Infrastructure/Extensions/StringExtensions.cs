@@ -1,4 +1,4 @@
-﻿namespace GerenciadorTurmas.Infrastructure.Extensions
+﻿namespace BancoDadosTest.Infrastructure.Extensions
 {
     public static class StringExtensions
     {

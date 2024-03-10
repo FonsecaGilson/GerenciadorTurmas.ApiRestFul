@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace GerenciadorTurmas.Infrastructure.DbContext
+namespace BancoDadosTest.Infrastructure.DbContext
 {
     public interface IDbContext
     {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace GerenciadorTurmas.Api.Models.Aluno
+namespace BancoDadosTest.Api.Models.Aluno
 {
     public class AlunoInputValidator : AbstractValidator<AlunoInput>
     {

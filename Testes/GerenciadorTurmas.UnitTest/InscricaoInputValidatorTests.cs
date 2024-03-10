@@ -1,9 +1,9 @@
 ﻿
 using FluentValidation.TestHelper;
-using GerenciadorTurmas.Api.Models.Aluno;
-using GerenciadorTurmas.Api.Models.Inscricao;
+using BancoDadosTest.Api.Models.Aluno;
+using BancoDadosTest.Api.Models.Inscricao;
 
-namespace GerenciadorTurmas.UnitTest
+namespace BancoDadosTest.UnitTest
 {
     public class InscricaoInputValidatorTests
     {

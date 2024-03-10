@@ -1,7 +1,7 @@
-﻿using GerenciadorTurmas.Api.Models.Aluno;
+﻿using BancoDadosTest.Api.Models.Aluno;
 using FluentValidation.TestHelper;
 
-namespace GerenciadorTurmas.UnitTest
+namespace BancoDadosTest.UnitTest
 {
     public class AlunoInputValidatorTests
     {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation.TestHelper;
-using GerenciadorTurmas.Api.Models.Turma;
+using BancoDadosTest.Api.Models.Turma;
 
-namespace GerenciadorTurmas.UnitTest
+namespace BancoDadosTest.UnitTest
 {
     public class TurmaInputValidatorTests
     {

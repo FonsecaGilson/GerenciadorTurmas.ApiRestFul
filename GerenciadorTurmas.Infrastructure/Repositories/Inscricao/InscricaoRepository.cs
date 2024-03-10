@@ -1,10 +1,10 @@
 ﻿using Dapper;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Inscricao;
-using GerenciadorTurmas.Domain.Entities;
-using GerenciadorTurmas.Infrastructure.DbContext;
+using BancoDadosTest.Domain.Contracts.Repositories.Inscricao;
+using BancoDadosTest.Domain.Entities;
+using BancoDadosTest.Infrastructure.DbContext;
 using System.Threading.Tasks;
 
-namespace GerenciadorTurmas.Infrastructure.Repositories.Inscricao
+namespace BancoDadosTest.Infrastructure.Repositories.Inscricao
 {
     public class InscricaoRepository : IInscricaoRepository
     {

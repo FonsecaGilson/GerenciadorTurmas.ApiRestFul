@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
-namespace GerenciadorTurmas.IntegrationTest
+namespace BancoDadosTest.IntegrationTest
 {
     public class BancoDadosTeste
     {

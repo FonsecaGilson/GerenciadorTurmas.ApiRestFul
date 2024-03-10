@@ -1,4 +1,4 @@
-﻿namespace GerenciadorTurmas.Api.Models.Aluno
+﻿namespace BancoDadosTest.Api.Models.Aluno
 {
     public class AlunoInput
     {

@@ -1,4 +1,4 @@
-﻿namespace GerenciadorTurmas.Api.Models.Inscricao
+﻿namespace BancoDadosTest.Api.Models.Inscricao
 {
     public class InscricaoInput
     {

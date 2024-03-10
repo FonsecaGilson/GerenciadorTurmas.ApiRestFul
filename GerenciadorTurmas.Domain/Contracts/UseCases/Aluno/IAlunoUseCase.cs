@@ -1,6 +1,6 @@
-﻿using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Domain.Contracts.UseCases.Aluno
+namespace BancoDadosTest.Domain.Contracts.UseCases.Aluno
 {
     public interface IAlunoUseCase
     {

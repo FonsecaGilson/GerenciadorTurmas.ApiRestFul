@@ -1,10 +1,10 @@
 ﻿using Dapper;
-using GerenciadorTurmas.Domain.Contracts.Repositories.Turma;
-using GerenciadorTurmas.Domain.Entities;
-using GerenciadorTurmas.Infrastructure.DbContext;
+using BancoDadosTest.Domain.Contracts.Repositories.Turma;
+using BancoDadosTest.Domain.Entities;
+using BancoDadosTest.Infrastructure.DbContext;
 
 
-namespace GerenciadorTurmas.Infrastructure.Repositories.Turma
+namespace BancoDadosTest.Infrastructure.Repositories.Turma
 {
     public class TurmaRepository : ITurmaRepository
     {

@@ -1,6 +1,6 @@
-﻿using GerenciadorTurmas.Domain.Entities;
+﻿using BancoDadosTest.Domain.Entities;
 
-namespace GerenciadorTurmas.Domain.Contracts.UseCases.Inscriao
+namespace BancoDadosTest.Domain.Contracts.UseCases.Inscriao
 {
     public interface IInscricaoUseCase
     {

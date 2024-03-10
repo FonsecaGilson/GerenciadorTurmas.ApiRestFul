@@ -1,5 +1,5 @@
 ﻿
-namespace GerenciadorTurmas.Application.CustonException
+namespace BancoDadosTest.Application.CustonException
 {
     public class RegraNegocioException : Exception
     {

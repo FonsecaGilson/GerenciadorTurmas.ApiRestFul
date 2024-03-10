@@ -1,4 +1,4 @@
-﻿namespace GerenciadorTurmas.Domain.Entities
+﻿namespace BancoDadosTest.Domain.Entities
 {
     public class AlunoEntity
     {

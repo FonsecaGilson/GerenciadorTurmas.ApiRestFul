@@ -1,11 +1,12 @@
-﻿using GerenciadorTurmas.Api.Models.Aluno;
+﻿using BancoDadosTest.Api.Models.Aluno;
+using BancoDadosTest.IntegrationTest;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace GerenciadorTurmas.IntegrationTest
+namespace GerenciadorAlunos.IntegrationTest
 {
     public class AlunoApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
