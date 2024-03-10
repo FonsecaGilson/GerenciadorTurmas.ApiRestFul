@@ -1,4 +1,4 @@
-﻿using BancoDadosTest.Api.Models.Inscricao;
+﻿using GerenciadorTurmas.Api.Models.Inscricao;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using System.Net;
@@ -10,12 +10,10 @@ namespace GerenciadorInscricaos.IntegrationTest
     public class InscricaoApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _webApplicationTest;
-        private readonly BancoDadosTest.IntegrationTest.BancoDadosTeste _bancoDadosTeste;
 
         public InscricaoApiTests(WebApplicationFactory<Program> webApplication)
         {
             _webApplicationTest = webApplication;
-            //_bancoDadosTeste.ExecutarScript("..\\Scripts SQL\\Create");
         }
 
         [Trait("Category", "Integration")]
@@ -157,7 +155,7 @@ namespace GerenciadorInscricaos.IntegrationTest
         [Trait("Category", "Integration")]
         [Theory(DisplayName = "Testando chamada mal sucedida da rota 'inscricao/Inserir' com AlunoId invalido.")]
         [InlineData("AlunoId vazio", "Identificador de aluno é obrigatório.", 0)]
-        [InlineData("AlunoId negativo", "Identificador de aluno é inválido.",  -1)]
+        [InlineData("AlunoId negativo", "Identificador de aluno é inválido.", -1)]
         public async Task InserirInscricaoAlunoIdInvalido_ReturnsBadStatusCode(string casoUso, string mensagemValidacaoEsperada, int alunoId)
         {
             var client = _webApplicationTest.CreateClient();

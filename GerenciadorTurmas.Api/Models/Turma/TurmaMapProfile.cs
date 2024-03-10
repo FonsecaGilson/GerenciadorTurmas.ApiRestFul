@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BancoDadosTest.Domain.Entities;
+using GerenciadorTurmas.Api.Models.Turma;
 
 namespace BancoDadosTest.Api.Models.Turma
 {

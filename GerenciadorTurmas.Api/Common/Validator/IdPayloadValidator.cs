@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace BancoDadosTest.Api.Common.Validator
+namespace GerenciadorTurmas.Api.Common.Validator
 {
     public class IdPayloadValidator : AbstractValidator<int>
     {

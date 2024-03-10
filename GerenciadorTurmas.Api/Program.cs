@@ -1,10 +1,4 @@
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using BancoDadosTest.Api.Common.Middleware;
-using BancoDadosTest.Api.Models.Aluno;
-using BancoDadosTest.Api.Models.Inscricao;
 using BancoDadosTest.Api.Models.Turma;
-using BancoDadosTest.Api.Swagger;
 using BancoDadosTest.Application.UseCases;
 using BancoDadosTest.Domain.Contracts.Repositories.Aluno;
 using BancoDadosTest.Domain.Contracts.Repositories.Inscricao;
@@ -16,6 +10,13 @@ using BancoDadosTest.Infrastructure.DbContext;
 using BancoDadosTest.Infrastructure.Repositories.Aluno;
 using BancoDadosTest.Infrastructure.Repositories.Inscricao;
 using BancoDadosTest.Infrastructure.Repositories.Turma;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using GerenciadorTurmas.Api.Common.Middleware;
+using GerenciadorTurmas.Api.Models.Aluno;
+using GerenciadorTurmas.Api.Models.Inscricao;
+using GerenciadorTurmas.Api.Models.Turma;
+using GerenciadorTurmas.Api.Swagger;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

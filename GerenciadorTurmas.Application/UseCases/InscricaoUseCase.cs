@@ -32,7 +32,7 @@ namespace BancoDadosTest.Application.UseCases
         {
             await _inscricaoRepository.Inativar(id);
         }
-        
+
         public async Task<IEnumerable<AlunoTurmaEntity>> Listar()
         {
             return await _inscricaoRepository.Listar();

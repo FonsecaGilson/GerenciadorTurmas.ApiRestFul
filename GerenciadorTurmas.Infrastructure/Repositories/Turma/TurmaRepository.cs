@@ -1,7 +1,7 @@
-﻿using Dapper;
-using BancoDadosTest.Domain.Contracts.Repositories.Turma;
+﻿using BancoDadosTest.Domain.Contracts.Repositories.Turma;
 using BancoDadosTest.Domain.Entities;
 using BancoDadosTest.Infrastructure.DbContext;
+using Dapper;
 
 
 namespace BancoDadosTest.Infrastructure.Repositories.Turma

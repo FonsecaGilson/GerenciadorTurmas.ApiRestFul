@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BancoDadosTest.Domain.Entities;
 
-namespace BancoDadosTest.Api.Models.Inscricao
+namespace GerenciadorTurmas.Api.Models.Inscricao
 {
     public class InscricaoMapProfile : Profile
     {

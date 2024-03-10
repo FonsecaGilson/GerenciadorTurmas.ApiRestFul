@@ -1,8 +1,7 @@
-﻿using Dapper;
-using BancoDadosTest.Domain.Contracts.Repositories.Inscricao;
+﻿using BancoDadosTest.Domain.Contracts.Repositories.Inscricao;
 using BancoDadosTest.Domain.Entities;
 using BancoDadosTest.Infrastructure.DbContext;
-using System.Threading.Tasks;
+using Dapper;
 
 namespace BancoDadosTest.Infrastructure.Repositories.Inscricao
 {

@@ -1,5 +1,5 @@
-﻿using BancoDadosTest.Api.Models.Aluno;
-using FluentValidation.TestHelper;
+﻿using FluentValidation.TestHelper;
+using GerenciadorTurmas.Api.Models.Aluno;
 
 namespace BancoDadosTest.UnitTest
 {

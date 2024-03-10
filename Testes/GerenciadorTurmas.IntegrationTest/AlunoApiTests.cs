@@ -1,5 +1,4 @@
-﻿using BancoDadosTest.Api.Models.Aluno;
-using BancoDadosTest.IntegrationTest;
+﻿using GerenciadorTurmas.Api.Models.Aluno;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using System.Net;
@@ -11,12 +10,10 @@ namespace GerenciadorAlunos.IntegrationTest
     public class AlunoApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _webApplicationTest;
-        private readonly BancoDadosTeste _bancoDadosTeste;
 
         public AlunoApiTests(WebApplicationFactory<Program> webApplication)
         {
             _webApplicationTest = webApplication;
-            //_bancoDadosTeste.ExecutarScript("..\\Scripts SQL\\Create");
         }
 
         [Trait("Category", "Integration")]

@@ -1,8 +1,8 @@
-﻿using Dapper;
-using BancoDadosTest.Domain.Contracts.Repositories.Aluno;
+﻿using BancoDadosTest.Domain.Contracts.Repositories.Aluno;
 using BancoDadosTest.Domain.Entities;
 using BancoDadosTest.Infrastructure.DbContext;
 using BancoDadosTest.Infrastructure.Extensions;
+using Dapper;
 
 namespace BancoDadosTest.Infrastructure.Repositories.Aluno
 {

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using BancoDadosTest.Api.Common.Validator;
-using BancoDadosTest.Api.Models.Aluno;
 using BancoDadosTest.Domain.Contracts.UseCases.Aluno;
 using BancoDadosTest.Domain.Entities;
+using GerenciadorTurmas.Api.Common.Validator;
+using GerenciadorTurmas.Api.Models.Aluno;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BancoDadosTest.Api.Controllers
+namespace GerenciadorTurmas.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -20,7 +20,7 @@ namespace BancoDadosTest.Api.Controllers
         {
             _mapper = mapper;
             _alunoUseCase = alunoUseCase;
-            _idPayloadValidator = idPayloadValidator;  
+            _idPayloadValidator = idPayloadValidator;
         }
 
         [HttpPost("Inserir")]

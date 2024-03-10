@@ -1,5 +1,4 @@
-﻿using BancoDadosTest.Api.Models.Turma;
-using BancoDadosTest.IntegrationTest;
+﻿using GerenciadorTurmas.Api.Models.Turma;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using System.Net;
@@ -11,12 +10,10 @@ namespace TurmaApiTests.IntegrationTest
     public class TurmaApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _webApplicationTest;
-        private readonly BancoDadosTeste _bancoDadosTeste;
 
         public TurmaApiTests(WebApplicationFactory<Program> webApplication)
         {
             _webApplicationTest = webApplication;
-            //_bancoDadosTeste.ExecutarScript("..\\Scripts SQL\\Create");
         }
 
         [Trait("Category", "Integration")]

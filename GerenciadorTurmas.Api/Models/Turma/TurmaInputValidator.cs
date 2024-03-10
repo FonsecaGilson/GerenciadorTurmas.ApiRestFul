@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace BancoDadosTest.Api.Models.Turma
+namespace GerenciadorTurmas.Api.Models.Turma
 {
     public class TurmaInputValidator : AbstractValidator<TurmaInput>
     {

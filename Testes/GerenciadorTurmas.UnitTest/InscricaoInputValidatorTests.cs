@@ -1,7 +1,6 @@
 ﻿
 using FluentValidation.TestHelper;
-using BancoDadosTest.Api.Models.Aluno;
-using BancoDadosTest.Api.Models.Inscricao;
+using GerenciadorTurmas.Api.Models.Inscricao;
 
 namespace BancoDadosTest.UnitTest
 {
@@ -23,7 +22,7 @@ namespace BancoDadosTest.UnitTest
         [Theory(DisplayName = "Testando InscricaoInputValidator mensagem de retorno com o atributo AlunoId de InscricaoInput valorizado icorretamente.")]
         [InlineData("AlunoId zerado", 0)]
         [InlineData("AlunoId valor negativo", -1)]
-        public void InscricaoInputValidator_NomeInvalido_ShouldReturnErrorMessage(string casoTeste, int alunoId )
+        public void InscricaoInputValidator_NomeInvalido_ShouldReturnErrorMessage(string casoTeste, int alunoId)
         {
             var validator = new InscricaoInputValidator();
             var aluno = new InscricaoInput { AlunoId = alunoId, TurmaId = 1 };

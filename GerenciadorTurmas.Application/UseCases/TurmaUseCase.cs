@@ -43,7 +43,7 @@ namespace BancoDadosTest.Application.UseCases
 
         public async Task VerificarExistenciaTurma(string turma, int? id = null)
         {
-            var turmaExistente =  await _turmaRepository.VerificarExistenciaTurma(turma, id);
+            var turmaExistente = await _turmaRepository.VerificarExistenciaTurma(turma, id);
 
             if (turmaExistente)
             {

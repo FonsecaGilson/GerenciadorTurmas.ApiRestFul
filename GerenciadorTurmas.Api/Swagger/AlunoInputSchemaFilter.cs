@@ -1,9 +1,9 @@
-﻿using BancoDadosTest.Api.Models.Aluno;
+﻿using GerenciadorTurmas.Api.Models.Aluno;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace BancoDadosTest.Api.Swagger
+namespace GerenciadorTurmas.Api.Swagger
 {
     public class AlunoInputSchemaFilter : ISchemaFilter
     {
