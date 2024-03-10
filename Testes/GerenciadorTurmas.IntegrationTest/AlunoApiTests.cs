@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace GerenciadorAlunos.IntegrationTest
+namespace AlunoApiTests.IntegrationTest
 {
     public class AlunoApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
@@ -41,7 +41,7 @@ namespace GerenciadorAlunos.IntegrationTest
 
         [Trait("Category", "Integration")]
         [Theory(DisplayName = "Testando chamada bem sucedida da rota 'aluno/Inativar/{id}'.")]
-        [InlineData("Inativando Aluno com Id 1", 1)]
+        [InlineData("Inativando Aluno com Id 2", 2)]
         public async Task InativarAluno_ReturnsSuccessStatusCode(string casoTeste, int alunoId)
         {
             var client = _webApplicationTest.CreateClient();

@@ -41,7 +41,7 @@ namespace TurmaApiTests.IntegrationTest
 
         [Trait("Category", "Integration")]
         [Theory(DisplayName = "Testando chamada bem sucedida da rota 'turma/Inativar/{id}'.")]
-        [InlineData("Inativando Turma com Id 1", 1)]
+        [InlineData("Inativando Turma com Id 2", 2)]
         public async Task InativarTurma_ReturnsSuccessStatusCode(string casoTeste, int turmaId)
         {
             var client = _webApplicationTest.CreateClient();
@@ -103,8 +103,8 @@ namespace TurmaApiTests.IntegrationTest
 
             var turma = new TurmaInput()
             {
-                Id = 1,
-                Turma = "Matemática",
+                Id = 3,
+                Turma = "Matematica",
                 Ano = 2024,
             };
 
@@ -132,7 +132,7 @@ namespace TurmaApiTests.IntegrationTest
             var turma = new TurmaInput()
             {
                 Id = null,
-                Turma = "Matemática",
+                Turma = "Calculo I",
                 Ano = 2024,
             };
 

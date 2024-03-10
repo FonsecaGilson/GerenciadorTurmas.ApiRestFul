@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace GerenciadorInscricaos.IntegrationTest
+namespace InscricaoApiTests.IntegrationTest
 {
     public class InscricaoApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
@@ -41,7 +41,7 @@ namespace GerenciadorInscricaos.IntegrationTest
 
         [Trait("Category", "Integration")]
         [Theory(DisplayName = "Testando chamada bem sucedida da rota 'inscricao/Inativar/{id}'.")]
-        [InlineData("Inativando Inscricao com Id 1", 1)]
+        [InlineData("Inativando Inscricao com Id 2", 2)]
         public async Task InativarInscricao_ReturnsSuccessStatusCode(string casoTeste, int inscricaoId)
         {
             var client = _webApplicationTest.CreateClient();
@@ -59,8 +59,8 @@ namespace GerenciadorInscricaos.IntegrationTest
 
             var inscricao = new InscricaoInput()
             {
-                Id = 6,
-                AlunoId = 2,
+                Id = 1,
+                AlunoId = 1,
                 TurmaId = 1,
             };
 
@@ -83,7 +83,7 @@ namespace GerenciadorInscricaos.IntegrationTest
             {
                 Id = null,
                 AlunoId = 3,
-                TurmaId = 2,
+                TurmaId = 3,
             };
 
             string jsonContent = JsonSerializer.Serialize(inscricao);
@@ -104,8 +104,8 @@ namespace GerenciadorInscricaos.IntegrationTest
             var inscricao = new InscricaoInput()
             {
                 Id = 1,
-                AlunoId = 1,
-                TurmaId = 1,
+                AlunoId = 2,
+                TurmaId = 2,
             };
 
             string jsonContent = JsonSerializer.Serialize(inscricao);

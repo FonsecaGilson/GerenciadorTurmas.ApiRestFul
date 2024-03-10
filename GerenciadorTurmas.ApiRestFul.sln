@@ -42,6 +42,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.Integrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorTurmas.UnitTest", "Testes\GerenciadorTurmas.UnitTest\GerenciadorTurmas.UnitTest.csproj", "{DCC4CDCF-67FE-44ED-8B14-3A8675E65ED6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTest", "IntegrationTest", "{A450C9AB-C96F-472D-BF90-7270EDA3BCDB}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts SQL\ValuesIntegrationTest\Preparar_DB_Integration_Test.sql = Scripts SQL\ValuesIntegrationTest\Preparar_DB_Integration_Test.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +86,7 @@ Global
 		{D298B44A-133A-468A-9C36-4D115B8CE085} = {80C341EE-802F-4284-8583-5FFBF14B8BCD}
 		{4B618DAA-73D4-4B78-A093-99DF6E21AE9C} = {3FE265BB-6ABD-4EC6-87FA-4A34AC0DD74B}
 		{DCC4CDCF-67FE-44ED-8B14-3A8675E65ED6} = {3FE265BB-6ABD-4EC6-87FA-4A34AC0DD74B}
+		{A450C9AB-C96F-472D-BF90-7270EDA3BCDB} = {80C341EE-802F-4284-8583-5FFBF14B8BCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F4EA573-1714-4886-98B9-2C641A877886}
