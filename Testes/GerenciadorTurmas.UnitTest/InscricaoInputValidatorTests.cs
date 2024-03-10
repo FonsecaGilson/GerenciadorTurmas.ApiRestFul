@@ -23,7 +23,7 @@ namespace GerenciadorTurmas.UnitTest
         [Theory(DisplayName = "Testando InscricaoInputValidator mensagem de retorno com o atributo AlunoId de InscricaoInput valorizado icorretamente.")]
         [InlineData("AlunoId zerado", 0)]
         [InlineData("AlunoId valor negativo", -1)]
-        public void InscricaoInputValidator_NomeInvalido_ShouldReturnErrorMessage(string casoDeTeste, int alunoId )
+        public void InscricaoInputValidator_NomeInvalido_ShouldReturnErrorMessage(string casoTeste, int alunoId )
         {
             var validator = new InscricaoInputValidator();
             var aluno = new InscricaoInput { AlunoId = alunoId, TurmaId = 1 };
@@ -37,7 +37,7 @@ namespace GerenciadorTurmas.UnitTest
         [Theory(DisplayName = "Testando InscricaoInputValidator mensagem de retorno com o atributo TurmaId de InscricaoInput valorizado icorretamente.")]
         [InlineData("TurmaId zerado", 0)]
         [InlineData("TurmaId valor negativo", -1)]
-        public void InscricaoInputValidator_TurmaInvalido_ShouldReturnErrorMessage(string casoDeTeste, int turmaId)
+        public void InscricaoInputValidator_TurmaInvalido_ShouldReturnErrorMessage(string casoTeste, int turmaId)
         {
             var validator = new InscricaoInputValidator();
             var aluno = new InscricaoInput { AlunoId = 1, TurmaId = turmaId };

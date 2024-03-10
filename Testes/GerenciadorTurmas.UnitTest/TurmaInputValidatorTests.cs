@@ -23,7 +23,7 @@ namespace GerenciadorTurmas.UnitTest
         [InlineData("Turma com espaços em branco", "   ", 1)]
         [InlineData("Turma com menos de 3 caracteres", "Ma", 1)]
         [InlineData("Turma com mais de 45 caracteres", "Matematica", 5)]
-        public void TurmaInputValidator_TrumaInvalida_ShouldReturnErrorMessage(string casoDeTeste, string turma, int repeticaoConcat)
+        public void TurmaInputValidator_TrumaInvalida_ShouldReturnErrorMessage(string casoTeste, string turma, int repeticaoConcat)
         {
             turma = string.Concat(Enumerable.Repeat(turma, repeticaoConcat));
 
@@ -40,7 +40,7 @@ namespace GerenciadorTurmas.UnitTest
         [Theory(DisplayName = "Testando TurmaInputValidator mensagem de retorno com o atributo Ano de TurmaInput valorizado icorretamente.")]
         [InlineData("Ano zerado", 0)]
         [InlineData("Ano menor que o ano atual", 2023)]
-        public void TurmaInputValidator_AnoInvalido_ShouldReturnErrorMessage(string casoDeTeste, int ano)
+        public void TurmaInputValidator_AnoInvalido_ShouldReturnErrorMessage(string casoTeste, int ano)
         {
 
             var validator = new TurmaInputValidator();

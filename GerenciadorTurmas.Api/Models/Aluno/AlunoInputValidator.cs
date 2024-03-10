@@ -15,10 +15,10 @@ namespace GerenciadorTurmas.Api.Models.Aluno
                 .MinimumLength(3).WithMessage("Usuário deve conter no minimo 3 caracteres.");
 
             RuleFor(p => p.Senha).NotEmpty().WithMessage("Senha é obrigatório.")
-                .MaximumLength(16).WithMessage("Senha deve conter no máximo 45 caracteres.")
+                .MaximumLength(16).WithMessage("Senha deve conter no máximo 16 caracteres.")
                 .MinimumLength(8).WithMessage("Senha deve conter no minimo 8 caracteres.")
                 .Matches(@"[A-Z]+").WithMessage("Senha deve conter pelo menos uma letras maiúsculas.")
-                .Matches(@"[a-z]+").WithMessage("Senha deve conter pelo menos uma letras minúsculas..")
+                .Matches(@"[a-z]+").WithMessage("Senha deve conter pelo menos uma letras minúsculas.")
                 .Matches(@"[0-9]+").WithMessage("Senha deve conter pelo menos um numero.")
                 .Matches(@"[\!\?\*\.]+").WithMessage("Senha deve conter pelo menos um (!? *.).");
         }
