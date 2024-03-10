@@ -6,8 +6,10 @@ namespace GerenciadorTurmas.Api.Models.Inscricao
     {
         public InscricaoInputValidator()
         {
-            RuleFor(c => c.AlunoId).NotEmpty().WithMessage("Identificador de aluno é obrigatório.");
-            RuleFor(c => c.TurmaId).NotEmpty().WithMessage("Identificador de turma é obrigatório.");
+            RuleFor(c => c.AlunoId).NotEmpty().WithMessage("Identificador de aluno é obrigatório.")
+                .GreaterThan(0).WithMessage($"Identificador de aluno é inválido.");
+            RuleFor(c => c.TurmaId).NotEmpty().WithMessage("Identificador de turma é obrigatório.")
+                .GreaterThan(0).WithMessage($"Identificador de turma é inválido.");
         }
     }
 }
